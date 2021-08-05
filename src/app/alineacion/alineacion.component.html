@@ -1,0 +1,94 @@
+<nav class="navbar navbar-dark navbar-expand-lg mb-4" style="background-color: #487eb0;">
+  <div class="container">
+    <a [routerLink]="['/indice']"><img src="/assets/angularimagen.png" width="55px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-en" id="navbarsExample07">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/indice']">Página principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/lista']">Jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/alineacion']">Mejores jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/juegovalor']">Juego valor mercado</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<h2 class="mb-4 text-center" *ngIf="showDelanteros">Elige los mejores jugadores por posición de la Eurocopa</h2>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <table class="table table-striped">
+        <tbody *ngIf="showPorteros">
+          <h5 class="text-center">Porteros</h5>
+          <tr *ngFor="let porteros of jugadores | filter: portero">
+            <td class="align-middle" (click)="getPortero(porteros.id)">{{porteros.nombre}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-auto">
+      <table class="table table-striped">
+        <tbody *ngIf="showDefensas">
+          <h5 class="text-center">Defensas</h5>
+          <tr *ngFor="let defensas of jugadores | filter: defensa">
+            <td class="align-middle" (click)="getDefensa(defensas.id)">{{defensas.nombre}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-auto">
+      <table class="table table-striped">
+        <tbody *ngIf="showMediocentros">
+          <h5 class="text-center">Mediocentros</h5>
+          <tr *ngFor="let mediocentros of jugadores | filter: mediocentro ">
+            <td class="align-middle" (click)="getMediocentro(mediocentros.id)">{{mediocentros.nombre}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-auto">
+      <table class="table table-striped">
+        <tbody *ngIf="showDelanteros">
+          <h5 class="text-center">Delanteros</h5>
+          <tr *ngFor="let delanteros of jugadores | filter: delantero">
+            <td class="align-middle" (click)="getDelantero(delanteros.id)">{{delanteros.nombre}}</td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="caja" *ngIf="showFiltrados">
+    <h1 class="mb-4 ms-5 text-center">Tu alineación favorita</h1>
+    <img src="assets/campo.png" alt=""/>
+
+    <img class="portero rounded-circle" src={{porteroFiltrado.imagen}} width="100px">
+    <h5 class="mt-3 resumen">Portero: {{porteroFiltrado.nombre}}</h5>
+
+    <img class="defensa rounded-circle" src={{defensaFiltrado.imagen}} width="100px">
+    <h5 class="resumen">Defensa: {{defensaFiltrado.nombre}}</h5>
+
+    <img class="mediocentro rounded-circle" src={{mediocentroFiltrado.imagen}} width="100px">
+    <h5 class="resumen">Mediocentro: {{mediocentroFiltrado.nombre}}</h5>
+
+    <img class="delantero rounded-circle" src={{delanteroFiltrado.imagen}} width="100px">
+    <h5 class="resumen">Delantero: {{delanteroFiltrado.nombre}}</h5>
+</div>
+</div>

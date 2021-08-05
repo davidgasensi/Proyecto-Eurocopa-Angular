@@ -1,0 +1,46 @@
+<nav class="navbar navbar-dark navbar-expand-lg mb-4" style="background-color: #487eb0;">
+  <div class="container">
+    <a [routerLink]="['/indice']"><img src="/assets/angularimagen.png" width="55px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-en" id="navbarsExample07">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/indice']">Página principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/lista']">Jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/alineacion']">Mejores jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/juegovalor']">Juego valor mercado</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="col-sm-4">
+  <input type="text" [(ngModel)]="searchedKeyword" class="form-control mb-3 centrarInput" name="filterDesc" id="filterDesc"
+    placeholder="Filtrar por nombre">
+  </div>
+
+
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let jugador of jugadores | sortBy: 'asc':'id' | filter: searchedKeyword" [routerLink]="['/detalle', jugador.id]"
+        class="ms-5">
+        <td><img src={{jugador.imagen}} class="rounded float-end" width="50px"></td>
+        <td class="align-middle juntarnombre">{{jugador.nombre}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

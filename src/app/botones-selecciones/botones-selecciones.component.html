@@ -1,0 +1,92 @@
+<h1 class="text-center mt-5 titulazo">PARTICIPANTES</h1>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 mt-3">
+  <div class="col">
+    <button class="btn-esp" (click)="getFiltro('ESP')"><span>España</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-ita" (click)="getFiltro('ITA')"><span>Italia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-por" (click)="getFiltro('POR')"><span>Portugal</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-ale" (click)="getFiltro('GER')"><span>Alemania</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-fra" (click)="getFiltro('FRA')"><span>Francia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-din" (click)="getFiltro('DEN')"><span>Dinamarca</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-bel" (click)="getFiltro('BEL')"><span>Bélgica</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-rus" (click)="getFiltro('RUS')"><span>Rusia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-fin" (click)="getFiltro('FIN')"><span>Finlandia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-gal" (click)="getFiltro('WAL')"><span>Gales</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-uca" (click)="getFiltro('UKR')"><span>Ucrania</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-hun" (click)="getFiltro('HUN')"><span>Hungría</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-pol" (click)="getFiltro('POL')"><span>Polonia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-esl" (click)="getFiltro('SLO')"><span>Eslovaquia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-sue" (click)="getFiltro('SWE')"><span>Suecia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-esc" (click)="getFiltro('SCO')"><span>Escocia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-cro" (click)="getFiltro('CRO')"><span>Croacia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-rep" (click)="getFiltro('CZE')"><span>Rep.Checa</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-ing" (click)="getFiltro('ENG')"><span>Inglaterra</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-hol" (click)="getFiltro('NED')"><span>Holanda</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-aus" (click)="getFiltro('AUT')"><span>Austria</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-mac" (click)="getFiltro('MAC')"><span>Macedonia</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-sui" (click)="getFiltro('SUI')"><span>Suiza</span></button>
+  </div>
+  <div class="col">
+    <button class="btn-tur" (click)="getFiltro('TUR')"><span>Turquía</span></button>
+  </div>
+</div>
+<div class="m-3">
+  <h2>{{seleccionesFiltrados.nombre | uppercase}}</h2>
+  <img *ngIf=[showImage] src={{seleccionesFiltrados.imagen}} class="float-end img-fluid" alt="imagenSeleccion"
+    width="350px">
+  <p>{{seleccionesFiltrados.descripcion}}</p>
+  <p class="jugadores" *ngIf=showImage>Jugadores</p>
+  <div class="table-responsive" *ngIf=showImage>
+    <table class="table table-borderless table-striped table-hover">
+      <tbody>
+        <tr *ngFor="let jugador of seleccionesFiltrados.jugadors | sort:{ property: 'id', descending: false }" [routerLink]="['/detalle', jugador.id]">
+          <td><img src={{jugador.imagen}} class="float-end img-fluid img-table"
+              alt="imagenSeleccion" width="80px"></td>
+          <td class="align-middle nombre-jugador" style="font-size:1.1em; font-weight: bold;">{{jugador.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

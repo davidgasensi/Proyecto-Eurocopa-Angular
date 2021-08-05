@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  text-decoration-line: underline;
+  text-decoration-color: #487eb0;
+  text-underline-offset: 24%;
+}
+.grupo-header {
+  background-color: #487eb0;
+  padding: 3%;
+  padding-top: 15px;
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+
+}
+
+.grupo-lista {
+  background-color: #ced6e0;
+  padding: 1%;
+  padding-top: 10px;
+  border-radius: 0px 0px 10px 10px;
+  list-style: none;
+  padding-left: 15%;
+  font-size: large;
+  transition: box-shadow .3s;
+}
+
+img {
+  margin-right: 8px;
+}
+
+li{
+  margin: 10px 0;
+}
+
+
+.grupo-lista:hover {
+  box-shadow: 0 0px 60px rgba(0, 0, 0, 0.2);
+}

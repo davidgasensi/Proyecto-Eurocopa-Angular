@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark navbar-expand-lg mb-4" style="background-color: #487eb0;">
+  <div class="container">
+    <a [routerLink]="['/indice']"><img src="/assets/angularimagen.png" width="55px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-en" id="navbarsExample07">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/indice']">Página principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/lista']">Jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/alineacion']">Mejores jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/juegovalor']">Juego valor mercado</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <section class="section section-lg bg-default mb-5" style="
+			background-image: url('https://livescore-api.com/themes/livescore-api/img/uefa-euro/uefa-euro-2020.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: right bottom;
+      border-radius: 10px;">
+    <div class="container">
+      <div class="row row-50 row-fix">
+        <div class="col-md-12">
+          <h1 class="text-center align-center" style=" color: #fff; font-size: 3.5em">UEFA EURO 2020 API</h1>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <grupos></grupos>
+  <botones-selecciones></botones-selecciones>
+  <estadisticas></estadisticas>
+</div>
+

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-dark navbar-expand-lg mb-4" style="background-color: #487eb0;">
+  <div class="container">
+    <a [routerLink]="['/indice']"><img src="/assets/angularimagen.png" width="55px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-en" id="navbarsExample07">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/indice']">Página principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/lista']">Jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/alineacion']">Mejores jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/juegovalor']">Juego valor mercado</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h1 class="text-center mb-5">¿Qué jugador tiene más valor de mercado?</h1>
+    <div class="row">
+      <div class="card-columns mx-auto d-flex justify-content-center col-6  mb-5">
+        <div class="card" style="width: 18rem;" [ngClass]="{'text-white bg-success ':respuestaCorrecta1,'bg-danger text-white':respuestaIncorrecta1}">
+          <img src={{random1.imagen}} class="card-img-top" alt="..." (click)="comprobarValor(random1.valor, random2.valor)">
+          <div class="card-body">
+            <h4 class="card-title text-center">{{random1.nombre}}</h4>
+            <h5 class="card-text text-center " *ngIf="showValor">{{random1.valor}}.€</h5>
+          </div>
+        </div>
+      </div>
+      <div class="card-columns mx-auto d-flex justify-content-center col-6 mb-5">
+        <div class="card" style="width: 18rem;" [ngClass]="{'bg-success text-white':respuestaCorrecta2,'bg-danger text-white':respuestaIncorrecta2}">
+          <img src={{random2.imagen}} class="card-img-top" alt="..." (click)="comprobarValor2(random1.valor, random2.valor)">
+          <div class="card-body">
+            <h4 class="card-title text-center">{{random2.nombre}}</h4>
+            <h5 class="card-text text-center" *ngIf="showValor">{{random2.valor}}.€</h5>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary botoncito col-2 " (click)="repetir()">Volver a jugar<i class="fas fa-play ms-2 fa-sm"></i></button>
+    </div>
+
+
+</div>

@@ -1,0 +1,96 @@
+<nav class="navbar navbar-dark navbar-expand-lg mb-4" style="background-color: #487eb0;">
+  <div class="container">
+    <a [routerLink]="['/indice']"><img src="/assets/angularimagen.png" width="55px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+      aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-en" id="navbarsExample07">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/indice']">Página principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/lista']">Jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/alineacion']">Mejores jugadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/juegovalor']">Juego valor mercado</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+
+
+    <div class="row align-items-center">
+      <div class="col-2 mx-auto">
+      <div class="card" style="width: 18rem;">
+        <img src="{{jugador.imagen}}" class="card-img-top" alt="...">
+        <div class="card-body text-center align-middle">
+          <h5 class="card-title ">{{jugador.nombre}}</h5>
+          <h6 class="card-title">{{jugador.edad}} años</h6>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">Selección: {{jugador.pais}}</li>
+          <li class="list-group-item">Club: {{jugador.club}}</li>
+          <li class="list-group-item">Valor: {{jugador.valor}}. €</li>
+        </ul>
+        <div class="card-body text-center">
+          <span class="card-link">Altura: {{jugador.altura}}</span>
+          <span class="card-link">Peso: {{jugador.peso}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Portero'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/portero.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Defensa Central'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/defensa.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Lateral Derecho'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/lateralderecho.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Lateral Izquierdo'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/lateralizquierdo.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Pivote'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/pivote.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Mediocentro'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/mediocentro.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Mediapunta'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/mediapunta.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Mediocentro Ofensivo'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/mediapunta.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Extremo Derecho'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/extremoderecho.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Extremo Izquierdo'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/extremoizquierdo.png">
+    </div>
+    <div class="col-2 mx-auto mb-3" *ngIf="jugador.posicion == 'Delantero Centro'">
+      <h5>{{jugador.posicion}}</h5>
+      <img src="assets/delanterocentro.png">
+    </div>
+</div>
+</div>
+

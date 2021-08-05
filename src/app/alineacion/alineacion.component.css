@@ -1,0 +1,45 @@
+td {
+  cursor: pointer;
+}
+
+.caja {
+  position: relative;
+  display: inline-block;
+  margin-left: 27%;
+}
+.portero{
+  position: absolute;
+  top: 35%;
+  left: 4%;
+}
+.defensa{
+  position: absolute;
+  top: 35%;
+  left: 27%;
+}
+
+.mediocentro{
+  position: absolute;
+  top: 35%;
+  left: 60%;
+}
+.delantero{
+  position: absolute;
+  top: 35%;
+  left: 81.5%;
+}
+.porterotexto{
+  position: absolute;
+  top: 54%;
+  left: 5%;
+}
+
+.defensatexto{
+  position: absolute;
+  top: 54%;
+  left: 27%;
+}
+
+.resumen {
+  margin-left: 30%;
+}

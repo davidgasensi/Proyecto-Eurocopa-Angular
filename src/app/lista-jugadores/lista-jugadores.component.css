@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600&display=swap');
+
+td:hover{
+  cursor:pointer;
+}
+
+table {
+  margin: auto;
+  width: 50% !important;
+
+}
+td {
+  padding-left: 25%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
+}
+
+.centrarInput {
+  margin-left: 75%;
+}
