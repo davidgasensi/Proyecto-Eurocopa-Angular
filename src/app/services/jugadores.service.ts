@@ -9,10 +9,10 @@ export class JugadoresService {
 
 
   getJugadores() {
-    return this.http.get('http://localhost:8080/api/jugador');
+    return this.http.get('https://spring-boot-eurocopa.herokuapp.com/api/jugador');
   }
 
   getDetalleJugador(id:number) {
-    return this.http.get('http://localhost:8080/api/jugador/'+id);
+    return this.http.get('https://spring-boot-eurocopa.herokuapp.com/api/jugador/'+id);
   }
 }
